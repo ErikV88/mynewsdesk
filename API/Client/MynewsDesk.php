@@ -38,7 +38,7 @@ class MynewsDesk
         usort($PressreleaseItem, function($a, $b) {
             return strtotime($a->published_at) - strtotime($b->published_at);
         });
-        $this->items=$items
+        $this->items=$items;
         return $items;
     }
     public function PressreleaseItem() {
