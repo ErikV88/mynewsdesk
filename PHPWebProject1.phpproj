@@ -16,24 +16,20 @@
     <IncludeDebugInformation>false</IncludeDebugInformation>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="API\Client\FacebookOAuth.php" />
     <Compile Include="API\Client\MynewsDesk.php" />
     <Compile Include="API\Client\RestAPIClient.php" />
     <Compile Include="API\Client\Soap.php" />
-    <Compile Include="API\Client\UserAuth.php" />
-    <Compile Include="API\Client\GetItems.php" />
-    <Compile Include="Class1.php" />
-    <Compile Include="config\Dbconfig.php" />
-    <Compile Include="Helpers\string.php" />
-    <Compile Include="index.php" />
+    <Compile Include="feed.php" />
+    <Compile Include="Index.php" />
     <Compile Include="mySQL\Mysql.php" />
-    <Compile Include="mySQL\RecordSource.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="API\" />
     <Folder Include="API\Client\" />
-    <Folder Include="Helpers\" />
     <Folder Include="mySQL\" />
-    <Folder Include="config\" />
+    <Folder Include="js\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="js\JavaScript1.js" />
   </ItemGroup>
 </Project>

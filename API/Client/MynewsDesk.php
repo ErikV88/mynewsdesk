@@ -23,11 +23,19 @@ class MynewsDesk
 
     public function SaveToWordPressDb() {
         $mysql = new Mysql();
-        $mysql->Connect();
-        foreach($this->items as $item) {
-            $mysql->freeRun("INSERT INTO wp_post (post_title,post_content) VALUES('" . $item->header . "','" . $item->body . "')");
-        }
 
+        if($mysql->Connect()) {
+            foreach($this->items as $item) {
+                $posts_exists= $mysql->selectWhere("wp_posts","post_name","=",str_replace($item->header," ",""),"char");
+                if($posts_exists==false) {
+                    $quwery="INSERT INTO wp_posts (post_type,post_title,post_name,post_content) VALUES('post','" . $item->header . "','" . str_replace($item->header," ","") . "','" . $item->body . "')";
+                    $mysql->freeRun($quwery);
+                }
+            }
+        } else {
+            return false;
+        }
+        return true;
     }
 
     public function getItems() {
@@ -35,7 +43,7 @@ class MynewsDesk
         $PressreleaseItem =$this->PressreleaseItem();
         array_push($items,$PressreleaseItem,$this->NewsItem(),$this->BlogPostItem());
 
-        usort($PressreleaseItem, function($a, $b) {
+        usort($items, function($a, $b) {
             return strtotime($a->published_at) - strtotime($b->published_at);
         });
         $this->items=$items;

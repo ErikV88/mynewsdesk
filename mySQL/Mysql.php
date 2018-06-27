@@ -13,14 +13,15 @@ class Mysql {
 	public $error;
 
 	function __construct() {
-		$this->username="root";
+		$this->username="joomllwa_olaola";
 		$this->hostname="localhost";
-		$this->password="Master1234!";
-		$this->databasename="dbo";
+		$this->password='k${3Zd5=?)2t';
+		$this->databasename="joomllwa_activeform";
+
 	}
 
 	function Connect()    {
-		$this->connection = new mysqli($this->hostname,$this->username,$this->password,$this->databaseName);
+		$this->connection = new mysqli($this->hostname,$this->username,$this->password,$this->databasename);
 		if ($this->connection->connect_error)
 		{
 			$this->error= "Failed to connect to MySQL: " . $this->connection->connect_error;
@@ -38,7 +39,7 @@ class Mysql {
 		$this->hostName = NULL;
 		$this->userName = NULL;
 		$this->passCode = NULL;
-		$conn->close();
+		$this->connection->close();
 	}
 
 	function selectAll($tableName)  {
@@ -85,7 +86,7 @@ class Mysql {
 	}
 
 	function selectFreeRun($query)  {
-		$this->dataSet = $this->connection->query($this ->sqlQuery);
+		$this->dataSet = $this->connection->query($query);
 		return $this->dataSet;
 	}
 
