@@ -1,0 +1,39 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>PHPWebProject1</Name>
+    <ProjectGuid>{0bf2b882-8afd-4196-81cb-10e1ebca4a30}</ProjectGuid>
+    <RootNamespace>
+    </RootNamespace>
+    <OutputType>Library</OutputType>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <RuntimeVersion>7.1</RuntimeVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="API\Client\FacebookOAuth.php" />
+    <Compile Include="API\Client\MynewsDesk.php" />
+    <Compile Include="API\Client\RestAPIClient.php" />
+    <Compile Include="API\Client\Soap.php" />
+    <Compile Include="API\Client\UserAuth.php" />
+    <Compile Include="API\Client\GetItems.php" />
+    <Compile Include="Class1.php" />
+    <Compile Include="config\Dbconfig.php" />
+    <Compile Include="Helpers\string.php" />
+    <Compile Include="index.php" />
+    <Compile Include="mySQL\Mysql.php" />
+    <Compile Include="mySQL\RecordSource.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="API\" />
+    <Folder Include="API\Client\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="mySQL\" />
+    <Folder Include="config\" />
+  </ItemGroup>
+</Project>
