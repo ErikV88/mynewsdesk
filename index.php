@@ -4,7 +4,7 @@ include_once('./API/Client/MynewsDesk.php');
 include_once('./mySQL/MYSQL.php');
 header('Content-Type: application/json');
 
-$unique_id = "28bd64f75e8ed32da31c6386ff354c22";
+$unique_id = " <key>";
 
 /*Merge types*/
 $MynewsDesk = new  MynewsDesk($unique_id);
