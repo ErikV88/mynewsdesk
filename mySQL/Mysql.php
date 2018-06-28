@@ -15,7 +15,7 @@ class Mysql {
 	function __construct() {
 		$this->username="joomllwa_olaola";
 		$this->hostname="localhost";
-		$this->password='k${3Zd5=?)2t';
+		$this->password='<password>';
 		$this->databasename="joomllwa_activeform";
 
 	}
